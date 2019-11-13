@@ -1,0 +1,35 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+        <h1>Add A Post</h1>
+        <p>Your contact email will be shared with registered users to reply to your post</p>
+        {{#each errors}}
+        <div class="error">
+            <p>{{text}}</p>
+        </div>
+        {{/each}}
+
+        <form action="/posts/add" method="POST">
+            <div class="input-group">
+                <label for="title">Member Name</label>
+                <input type="text" name="member_name" id="member_name" class="input-box"
+                    placeholder="eg. Sarah Smith, John Doe" maxlength="100" value="{{member_name}}">
+            </div>
+            <div class="input-group">
+                <label for="technologies">Group Level</label>
+                <input type="text" name="level_group" id="level_group" class="input-box"
+                    placeholder="enter number between 1 - 100" maxlength="100" value="{{level_group}}">
+            </div>
+            <div class="input-group">
+                <label for="budget">Phone Number</label>
+                <input type="text" name="phone_number" id="phone_number" class="input-box"
+                    placeholder="eg. 213-456-9999" value="{{phone_number}}">
+            </div>
+            <div class="input-group">
+                <label for="budget">Contact Email</label>
+                <input type="email" name="email" id="email" class="input-box" placeholder="Enter an email"
+                    value="{{email}}">
+            </div>
+            <input type="submit" value="Add Post" class="btn btn-reverse">
+        </form>
+    </div>
+</section>
